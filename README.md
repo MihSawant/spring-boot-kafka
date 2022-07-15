@@ -16,3 +16,7 @@ Here Spring Boot makes our life easy so instead of implementing all the config c
 does all the work for us.
 
 Next we are going to create a **_Topic_** using the TopicBuilder class, provide a name and add mark it as a Bean.
+
+We First create a Producer in order to publish some message, **KafkaTemplate** can be used to publish the message
+and it has _send()_ method which takes two args: topicName and the message to publish. This is a very nice utility
+that we can use which spring-boot provides and it is auto-configured by spring and so we can directly inject it.
