@@ -8,3 +8,9 @@ so that when the Consumer tries to consume the data or access the data, it will 
 or an Agent which holds the data. Kafka has an entire ecosystem with many small components that make up the
 **Kafka-Service**
 To know more, please visit the official site: https://kafka.apache.org/
+
+Before we start working with the project, we will have to configure the Producer and Consumer, and 
+we could easily do it by specifying certain properties in the application.properties file
+like the Producer and Consumer _groupId_ _servers_, _key and value serializers and deserializers_.
+Here Spring Boot makes our life easy so instead of implementing all the config code ourselves, the Framework
+does all the work for us.
