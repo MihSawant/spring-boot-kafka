@@ -13,4 +13,10 @@ public class KafkaTopicConfig {
         TopicBuilder topic = TopicBuilder.name("First-Topic");
         return topic.build();
     }
+
+    @Bean
+    public NewTopic onlyForJsonTopic(){
+        TopicBuilder jsonTopic = TopicBuilder.name("product-json-topic");
+                return jsonTopic.build();
+    }
 }

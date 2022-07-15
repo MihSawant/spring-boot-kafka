@@ -1,7 +1,9 @@
 package sawant.mihir.springbootkafkademo.kafka;
 
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.messaging.Message;
 import org.springframework.stereotype.Service;
+import sawant.mihir.springbootkafkademo.model.Product;
 
 import java.util.logging.Logger;
 
@@ -12,6 +14,10 @@ public class KafkaConsumer {
     @KafkaListener(topics = "First-Topic", groupId = "myGroup")
     public void subscribeMessage(String message){
         LOGGER.info(String.format("----------> Message %s is Consumed <----------", message));
+    }
+    @KafkaListener(topics = "product-json-topic", groupId = "myGroup")
+    public void subscribeJsonMessage(Message<Product> jsonMessage){
+        LOGGER.info(String.format("----------> Message %s is Consumed <----------", jsonMessage.getPayload()));
     }
 
 

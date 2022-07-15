@@ -21,7 +21,7 @@ public class JsonKafkaProducer {
 
     public void publishJsonMessage(Product product){
         Message<Product> productMessage = MessageBuilder.withPayload(product)
-                .setHeader(KafkaHeaders.TOPIC, "myGroup")
+                .setHeader(KafkaHeaders.TOPIC, "product-json-topic")
                 .build();
 
         kafkaTemplate.send(productMessage);
