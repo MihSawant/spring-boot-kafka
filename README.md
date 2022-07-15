@@ -20,3 +20,6 @@ Next we are going to create a **_Topic_** using the TopicBuilder class, provide 
 We First create a Producer in order to publish some message, **KafkaTemplate** can be used to publish the message
 and it has _send()_ method which takes two args: topicName and the message to publish. This is a very nice utility
 that we can use which spring-boot provides and it is auto-configured by spring and so we can directly inject it.
+    
+    In order to get message from the Client, We create a simple endpoint using RestController that accepts
+    the message as a Path-Variable and then publishes the message to the broker and sends valid reposne back.
