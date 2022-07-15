@@ -14,3 +14,5 @@ we could easily do it by specifying certain properties in the application.proper
 like the Producer and Consumer _groupId_ _servers_, _key and value serializers and deserializers_.
 Here Spring Boot makes our life easy so instead of implementing all the config code ourselves, the Framework
 does all the work for us.
+
+Next we are going to create a **_Topic_** using the TopicBuilder class, provide a name and add mark it as a Bean.
