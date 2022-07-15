@@ -23,3 +23,11 @@ that we can use which spring-boot provides and it is auto-configured by spring a
     
     In order to get message from the Client, We create a simple endpoint using RestController that accepts
     the message as a Path-Variable and then publishes the message to the broker and sends valid reposne back.
+
+Now to Consume the Messages which are published by the Producer we need to configure a Consumer, which is more easy
+as we need to define a method that just takes the Message Type as a Parameter. In this case I had string,
+and then just annotate the method with @KeyListener annotation, which in order to consume the Topic, will need to 
+specify the topicName and the groupId which we provided in the application.prop file. So that it can subscribe to the
+correct topic and get the message for us, And just mark it with @Service so that Class it will be automatically 
+added to the context by Spring as a Bean Type. And after running the project we can see that it consumes the messages,
+that we published.
