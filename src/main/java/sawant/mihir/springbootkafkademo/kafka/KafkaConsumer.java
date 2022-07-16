@@ -15,6 +15,9 @@ public class KafkaConsumer {
     public void subscribeMessage(String message){
         LOGGER.info(String.format("----------> Message %s is Consumed <----------", message));
     }
+    /*
+        JSON Message i.e. the Product Payload Consumer.
+     */
     @KafkaListener(topics = "product-json-topic", groupId = "myGroup")
     public void subscribeJsonMessage(Message<Product> jsonMessage){
         LOGGER.info(String.format("----------> Message %s is Consumed <----------", jsonMessage.getPayload()));
